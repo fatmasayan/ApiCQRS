@@ -19,9 +19,9 @@ namespace Api.Domain.Entities
             Priorty = priorty;
         }
 
-        public required int ParentId { get; set; } //doldurulması zorunlu alanlarda required
-        public required string Name { get; set; }
-        public required int Priorty { get; set; }
+        public  int ParentId { get; set; } //doldurulması zorunlu alanlarda required
+        public  string Name { get; set; }
+        public  int Priorty { get; set; }
 
         public ICollection<Detail> Details { get; set; } // bire çok ilişki 1 kategorini birden çok detay olur
         public ICollection<Product> Products { get; set; }    
