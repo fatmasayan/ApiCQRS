@@ -20,7 +20,7 @@ namespace Api.Persistence.Repositories
    
         public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, bool enableTracking = false)
         {
-            IQueryable<T> queryable = Table; //ne olaracağını belirtmediğimiz durumlarda kullanılır
+            IQueryable<T> queryable = Table; //ne olacağını belirtmediğimiz durumlarda kullanılır
             if (!enableTracking) queryable = queryable.AsNoTracking();//sorgu sonucu takip edilir update yapana kdr bu tracking mekanizması çalışır
             if (include != null) queryable= include(queryable);
             if(predicate is not null) queryable =  queryable.Where(predicate);

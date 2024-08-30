@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Api.Application.Features.Products.Queries.GetAllProducts
 {
-    internal class GetAllProductsQueryRequest
+    public class GetAllProductsQueryRequest :IRequest<List<GetAllProductsQueryResponse>>
     {
     }
 }
